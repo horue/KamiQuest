@@ -5,7 +5,7 @@ import requests
 import json
 import random
 from dc_token import *
-
+from samples import *
 
 
 intents = discord.Intents.default()
@@ -20,8 +20,11 @@ async def test(ctx):
 
 
 
-
-
+@bot.command(aliases=['s'])
+async def id(ctx):
+  id = ctx.message.guild.id
+  add_server(sn=id)
+  await ctx.send(id)
 
 
 
